@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raiyan' Kingdom Portfolio</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+    /* Full screen sections */
+    section { min-height: 100vh; display: flex; align-items: center; padding: 2rem; color: white; flex-direction: column; }
+
+    /* Section backgrounds */
+    #section1 { justify-content: center; text-align: center; background-color: #7B68EE; }
+    #section2, #section3, #section4 { justify-content: flex-start; text-align: left; padding-left: 5%; background-color: #7B68EE; }
+
+    /* Typewriter */
+    #name { font-family: 'Kaushan Script', cursive; font-size: 3em; margin-bottom: 1vh; color: #E1EBEE; }
+    #typewriter { font-size: 1.5em; min-height: 50px; }
+
+    /* Navbar */
+    nav.navbar { background-color: rgba(0,0,0,0.7); }
+    .nav-link { color: white !important; font-weight: bold; }
+    .nav-link.active { color: #FFD700 !important; position: relative; }
+    .nav-link.active::after { content: ''; display: block; width: 100%; height: 3px; background-color: #FFD700; border-radius: 2px; margin-top: 2px; }
+
+    /* Animated cards */
+    .animate-card { opacity: 0; transform: translateY(50px); transition: all 1s ease; }
+    .animate-card.active { opacity: 1; transform: translateY(0); }
+
+    /* Gradient animation */
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* About card */
+    .about-card {
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      background-size: 400% 400%;
+      padding: 2rem; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+      max-width: 700px; color: #fff; animation: gradientBG 10s ease infinite;
+      margin-bottom: 2rem;
+    }
+
+    /* Skills */
+    .skills-list { list-style: none; padding: 0; margin-top: 1rem; }
+    .skills-list li { margin-bottom: 1rem; }
+    .skill-name { font-weight: bold; }
+    .skill-bar { background: rgba(255,255,255,0.2); border-radius: 10px; overflow: hidden; height: 10px; margin-top: 5px; }
+    .skill-progress { background: #fff; height: 100%; border-radius: 10px; transition: width 1s ease; }
+
+    /* Certification cards */
+    .cert-card { overflow: hidden; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: transform 0.5s ease, box-shadow 0.5s ease; }
+    .cert-card:hover { transform: translateY(-10px) scale(1.05); box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+    .cert-card img { width: 100%; display: block; border-radius: 10px; }
+
+    /* Contact card */
+    .contact-card {
+      max-width: 600px; margin: auto; padding: 2rem;
+      border-radius: 20px; background: linear-gradient(135deg, #6a11cb, #2575fc);
+      background-size: 400% 400%; box-shadow: 0 15px 35px rgba(0,0,0,0.4); color: #fff; animation: gradientBG 10s ease infinite;
+    }
+    .contact-card input:focus, .contact-card textarea:focus { border-color: #fff; box-shadow: 0 0 5px #fff; outline: none; }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      section { padding: 2rem 1rem; }
+      .about-card, .contact-card { width: 90%; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+  <div class="container-md">
+    <a class="navbar-brand" href="#">Raiyan' Kingdom</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#section1">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#section2">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#section3">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#section4">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Section 1: Home -->
+<section id="section1">
+  <h1 id="name">Jihadul Islam Raiyan</h1>
+  <h1 id="typewriter"></h1>
+  <div class="mt-4">
+    <a href="mailto:raiyanusa20@gmail.com">
+      <button class="btn btn-info btn-lg">Hire Me</button>
+    </a>
+  </div>
+</section>
+
+<!-- Section 2: About -->
+<section id="section2">
+  <div class="about-card animate-card">
+    <h2>About Me</h2>
+    <p>Hello! I'm Jihadul Islam Raiyan, a passionate web developer from Bangladesh. I have <strong>3 years of experience</strong> and I'm currently in <strong>Class 8</strong>. I love coding and creating modern web applications.</p>
+    <h3>Skills</h3>
+    <ul class="skills-list">
+      <li><span class="skill-name">Python</span><div class="skill-bar"><div class="skill-progress" style="width:90%"></div></div></li>
+      <li><span class="skill-name">JavaScript</span><div class="skill-bar"><div class="skill-progress" style="width:85%"></div></div></li>
+      <li><span class="skill-name">HTML</span><div class="skill-bar"><div class="skill-progress" style="width:95%"></div></div></li>
+      <li><span class="skill-name">CSS</span><div class="skill-bar"><div class="skill-progress" style="width:90%"></div></div></li>
+      <li><span class="skill-name">Web Development</span><div class="skill-bar"><div class="skill-progress" style="width:80%"></div></div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- Section 3: Portfolio/Certifications -->
+<section id="section3">
+  <h2>My Certifications</h2>
+  <p>Here are some of my certifications:</p>
+  <div class="row g-4 mt-4">
+    <div class="col-lg-4 col-md-6 col-sm-12"><div class="cert-card animate-card"><img src="https://uploads.onecompiler.io/43pyrr5pd/43vdjy8as/1753370669897-5043fefa-bac4-47ce-a604-7ff22faeedfb_1.jpg" alt="Certificate 1"></div></div>
+    <div class="col-lg-4 col-md-6 col-sm-12"><div class="cert-card animate-card"><img src="https://uploads.onecompiler.io/43pyrr5pd/43vdjy8as/1754630225357-4fd3074a-d8f1-4a4c-afdb-1124ac2c104e_1.jpg" alt="Certificate 2"></div></div>
+    <div class="col-lg-4 col-md-6 col-sm-12"><div class="cert-card animate-card"><img src="https://uploads.onecompiler.io/43pyrr5pd/43vdjy8as/Programming_Hero_Certificate_web_fundamental.png" alt="Certificate 3"></div></div>
+    <div class="col-lg-4 col-md-6 col-sm-12"><div class="cert-card animate-card"><img src="https://uploads.onecompiler.io/43pyrr5pd/43vdjy8as/Screenshot_20250829_215127_Drive.png" alt="Certificate 4"></div></div>
+    <div class="col-lg-4 col-md-6 col-sm-12"><div class="cert-card animate-card"><img src="https://uploads.onecompiler.io/43pyrr5pd/43vdjy8as/Screenshot_20250830_174601_Drive.jpg" alt="Certificate 5"></div></div>
+  </div>
+</section>
+
+<!-- Section 4: Contact -->
+<section id="section4">
+  <div class="contact-card animate-card">
+    <h2>Contact Me</h2>
+    <p>Feel free to reach out by filling the form below:</p>
+    <form id="contactForm" novalidate>
+      
+      <div class="mb-3">
+        <label for="nameInput" class="form-label">Name</label>
+        <input type="text" class="form-control" id="nameInput" placeholder="Your Name" required>
+      </div>
+      <div class="mb-3">
+        <label for="emailInput" class="form-label">Email</label>
+        <input type="email" class="form-control" id="emailInput" placeholder="Your Email" required>
+      </div>
+      <div class="mb-3">
+        <label for="messageInput" class="form-label">Message</label>
+        <textarea class="form-control" id="messageInput" rows="5" placeholder="Your Message" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-info btn-lg">Send Message</button>
+    </form>
+    <p id="formStatus" class="mt-3"></p>
+  </div>
+</section>
+
+<!-- JS Scripts -->
+<script>
+// Typewriter effect
+const sentences = ["I LOVE PROGRAMMING.", "I'M A WEBSITE DEVELOPER.", "I'M HALF TIME CODER."];
+let i = 0, j = 0, isDeleting = false;
+
+function typeWriter() {
+  const target = document.getElementById("typewriter");
+  const current = sentences[j];
+  if (!isDeleting) {
+    target.textContent = current.substring(0, i + 1);
+    i++;
+    if (i === current.length) { isDeleting = true; setTimeout(typeWriter, 1500); return; }
+  } else {
+    target.textContent = current.substring(0, i - 1);
+    i--;
+    if (i === 0) { isDeleting = false; j = (j + 1) % sentences.length; setTimeout(typeWriter, 800); return; }
+  }
+  const delay = isDeleting ? 50 + Math.random()*50 : 80 + Math.random()*100;
+  setTimeout(typeWriter, delay);
+}
+window.onload = typeWriter;
+
+// Animate elements on scroll
+const animateElements = document.querySelectorAll('.animate-card');
+window.addEventListener('scroll', () => {
+  animateElements.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100) {
+      el.classList.add('active');
+    }
+  });
+});
+
+// Navbar active link on scroll
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-link");
+window.addEventListener("scroll", () => {
+  let current = "";
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 80;
+    if (pageYOffset >= sectionTop) current = section.getAttribute("id");
+  });
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === "#" + current) link.classList.add("active");
+  });
+});
+
+// Contact form submit with mailto
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const name = document.getElementById('nameInput').value.trim();
+  const email = document.getElementById('emailInput').value.trim();
+  const message = document.getElementById('messageInput').value.trim();
+  const status = document.getElementById('formStatus');
+
+  if(!name || !email || !message){
+    status.textContent = "Please fill in all fields.";
+    status.style.color = "red";
+    return;
+  }
+
+  const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  if(!emailPattern.test(email)){
+    status.textContent = "Please enter a valid email address.";
+    status.style.color = "red";
+    return;
+  }
+
+  const mailtoLink = `mailto:raiyanusa20@gmail.com?subject=Message from ${encodeURIComponent(name)}&body=${encodeURIComponent(message + "\n\nFrom: " + email)}`;
+  window.location.href = mailtoLink;
+
+  status.textContent = "Your email client will open now. Please send your message.";
+  status.style.color = "lightgreen";
+  this.reset();
+});
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Footer -->
+<footer style="background: linear-gradient(135deg, #1f1c2c, #928dab); color: #fff; padding: 4rem 2rem; position: relative; text-align: center;">
+  <div class="container">
+    <h2 style="font-family: 'Kaushan Script', cursive; font-size: 2.5rem; margin-bottom: 1rem;">Raiyan's Kingdom</h2>
+    <p style="font-size: 1.2rem; margin-bottom: 2rem;">Crafting modern web experiences with passion and creativity.</p>
+    
+    <!-- Button to watch video -->
+    <a href="https://youtube.com/shorts/bDcC5hAqWCI?si=vinRJnD9tvoOQnla" target="_blank" class="btn btn-outline-light btn-lg" 
+       style="font-size: 1.2rem; border-radius: 50px; padding: 0.8rem 2rem; transition: all 0.3s ease;">
+      Watch Web Demo
+    </a>
+
+    <!-- Social links (optional, can add icons later) -->
+    <div style="margin-top: 2rem;">
+      <a href="mailto:raiyanusa20@gmail.com" style="color: #FFD700; margin: 0 1rem; font-size: 1.5rem;">📧</a>
+      <a href="#" style="color: #FFD700; margin: 0 1rem; font-size: 1.5rem;">💻</a>
+      <a href="#" style="color: #FFD700; margin: 0 1rem; font-size: 1.5rem;">🌐</a>
+    </div>
+
+    <p style="margin-top: 2rem; font-size: 0.9rem; color: rgba(255,255,255,0.7);">
+      &copy; 2025 Jihadul Islam Raiyan. All rights reserved.
+    </p>
+  </div>
+</footer>
+
+<style>
+/* Footer Hover Animation */
+footer .btn-outline-light:hover {
+  background: #FFD700;
+  color: #1f1c2c;
+  transform: scale(1.1);
+}
+footer a:hover {
+  color: #fff !important;
+}
+</style>
+</body>
+</html>
